@@ -29,7 +29,7 @@ function App() {
           step="0.01"
           value={volume}
           onChange={handleVolumeChange}
-          className="h-2 w-32 bg-neutral-500 rounded-full appearance-none"
+          className="h-4 w-32 bg-neutral-500 rounded-full appearance-none"
         />
         <div className="jello-horizontal mt-4">
           <div className="heart"></div>
