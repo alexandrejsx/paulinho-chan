@@ -5,14 +5,14 @@ import audioSrc from './assets/anohana.mp3';
 function App() {
   const [showOverlay, setShowOverlay] = useState(true);
   const [volume, setVolume] = useState(0.5);
-  const [opacity, setOpcacity] = useState(20);
+  const [opacity, setOpcacity] = useState(true);
   const audioRef = useRef(null);
 
   const handleOverlayClick = () => {
     const audio = audioRef.current;
     audio.play();
     setShowOverlay(false);
-    setOpcacity(100);
+    setOpcacity(false);
   };
 
   const handleVolumeChange = (event) => {
@@ -31,7 +31,7 @@ function App() {
           <p className="text-2xl tracking-out-expand text-slate-300">Clique para exibir</p>
         </div>
       )}
-      <main className={`h-screen w-screen bg-stone-200 pt-4 opacity-${opacity}`}>
+      <main className={`h-screen w-screen bg-stone-200 pt-4 ${opacity && 'opacity-20'}`}>
         <audio ref={audioRef} src={audioSrc} loop volume={volume} controls className="hidden" />
         <div className="flex flex-col justify-center items-center">
           <input
