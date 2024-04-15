@@ -28,7 +28,7 @@ function App() {
           className="absolute top-0 left-0 w-full h-full bg-black opacity-90 flex justify-center items-center text-white cursor-pointer z-50"
           onClick={handleOverlayClick}
         >
-          <p className="text-2xl tracking-out-expand text-slate-300">Clique para exibir</p>
+          <p className="text-xl tracking-out-expand text-slate-300 text-center">Clique para exibir</p>
         </div>
       )}
       <main className={`h-screen w-screen bg-stone-200 pt-4 ${opacity && 'opacity-20'}`}>
