@@ -231,22 +231,22 @@ main {
     left: 35%;
     position: absolute;
     opacity: 0;
-    -webkit-animation: heartUp 1.4s 0.3s infinite ease-in;
-    animation: heartUp 1.4s 0.3s infinite ease-in;
+    -webkit-animation: heartUp 152s 0.3s infinite ease-in;
+    animation: heartUp 1.5s 0.3s infinite ease-in;
   }
   &:nth-child(3) {
     position: absolute;
-    left: 65%;
+    left: 50%;
     opacity: 0;
-    -webkit-animation: heartUp 1.4s 0.6s infinite ease-in;
-    animation: heartUp 1.4s 0.6s infinite ease-in;
+    -webkit-animation: heartUp 1.7s 0.6s infinite ease-in;
+    animation: heartUp 1.7s 0.6s infinite ease-in;
   }
   &:nth-child(4) {
     position: absolute;
-    right: 20%;
+    left: 75%;
     opacity: 0;
-    -webkit-animation: heartUp 1.4s 0.6s infinite ease-in;
-    animation: heartUp 1.4s 0.6s infinite ease-in;
+    -webkit-animation: heartUp 1.2s 0.6s infinite ease-in;
+    animation: heartUp 1.2s 0.6s infinite ease-in;
   }
 }
 
