@@ -111,69 +111,6 @@ main {
   transform-origin: 100% 100%;
 }
 
-.text-shadow-pop-left {
-  -webkit-animation: text-shadow-pop-left 1s infinite both;
-  animation: text-shadow-pop-left 1s infinite both;
-}
-
-@-webkit-keyframes text-shadow-pop-left {
-  0% {
-    text-shadow:
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    text-shadow:
-      -1px 0 rgb(2 6 23),
-      -2px 0 rgb(2 6 23),
-      -3px 0 rgb(2 6 23),
-      -4px 0 rgb(2 6 23),
-      -5px 0 rgb(2 6 23),
-      -6px 0 rgb(2 6 23),
-      -7px 0 rgb(2 6 23),
-      -8px 0 rgb(2 6 23);
-    -webkit-transform: translateX(8px);
-    transform: translateX(8px);
-  }
-}
-
-@keyframes text-shadow-pop-left {
-  0% {
-    text-shadow:
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23),
-      0 0 rgb(2 6 23);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    text-shadow:
-      -1px 0 rgb(2 6 23),
-      -2px 0 rgb(2 6 23),
-      -3px 0 rgb(2 6 23),
-      -4px 0 rgb(2 6 23),
-      -5px 0 rgb(2 6 23),
-      -6px 0 rgb(2 6 23),
-      -7px 0 rgb(2 6 23),
-      -8px 0 rgb(2 6 23);
-    -webkit-transform: translateX(8px);
-    transform: translateX(8px);
-  }
-}
-
 .tracking-out-expand {
   -webkit-animation: tracking-out-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both;
   animation: tracking-out-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both;
@@ -275,5 +212,131 @@ main {
     transform: scale(1);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+  }
+}
+
+.heartFloatig {
+  position: absolute;
+  &:nth-child(1) svg {
+    opacity: 0;
+    -webkit-animation: heartUp 1.4s infinite ease-in;
+    animation: heartUp 1.4s infinite ease-in;
+  }
+  &:nth-child(2) svg {
+    position: absolute;
+    left: 1rem;
+    opacity: 0;
+    -webkit-animation: heartUp 1.4s 0.3s infinite ease-in;
+    animation: heartUp 1.4s 0.3s infinite ease-in;
+  }
+  &:nth-child(3) svg {
+    position: absolute;
+    left: 0.5rem;
+    opacity: 0;
+    -webkit-animation: heartUp 1.4s 0.6s infinite ease-in;
+    animation: heartUp 1.4s 0.6s infinite ease-in;
+  }
+}
+
+.heartFloatig svg {
+  fill: #f58d9c;
+}
+
+@-webkit-keyframes heartUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+    transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes heartUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+    transform: translate3d(0, -35vh, 0) scale(1.2) rotate(-10deg);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.puff-in-top {
+  -webkit-animation: puff-in-top 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: puff-in-top 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+@-webkit-keyframes puff-in-top {
+  0% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes puff-in-top {
+  0% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
 }
