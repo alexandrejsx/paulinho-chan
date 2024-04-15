@@ -1,23 +1,37 @@
 import './App.css';
-import React from 'react';
-import ReactPlayer from 'react-player';
+import React, { useRef, useState } from 'react';
 
 function App() {
+  const audioRef = useRef(null);
+  const [volume, setVolume] = useState(0.5);
+
+  const handleVolumeChange = (event) => {
+    const newVolume = parseFloat(event.target.value);
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume;
+  };
+
   return (
-    <main className="h-screen w-screen bg-stone-200 pt-12">
-      <div style={{ display: 'none' }}>
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=4QDEWNg5hAM"
-          playing={true}
-          loop={true}
-          volume={0.5}
-          width={0}
-          height={0}
-        />
-      </div>
+    <main className="h-screen w-screen bg-stone-200 pt-4">
+      <audio
+        ref={audioRef}
+        src="../anohana.mp3"
+        loop
+        autoPlay
+        volume={volume}
+        style={{ display: 'none' }}
+      />
       <div className="flex flex-col justify-center items-center">
-        <div></div>
-        <div className="jello-horizontal">
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={volume}
+          onChange={handleVolumeChange}
+          className="h-2 w-32 bg-neutral-500 rounded-full appearance-none"
+        />
+        <div className="jello-horizontal mt-4">
           <div className="heart"></div>
         </div>
         <p className="tracking-out-expand text-slate-500 text-center text-2xl">Desculpa</p>
@@ -29,7 +43,7 @@ function App() {
           <p>E o primeiro a esquecer é o mais feliz."</p>
         </p>
         <div className="flex justify-between">
-          <img src=" https://media.tenor.com/HnKb6eV2ALsAAAAi/anime.gif" alt="Anime Gif" />
+          <img src="https://media.tenor.com/HnKb6eV2ALsAAAAi/anime.gif" alt="Anime Gif" />
           <img src="https://media.tenor.com/v84DdQdmes4AAAAi/anime.gif" alt="Anime Gif" />
         </div>
       </div>
